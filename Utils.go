@@ -74,7 +74,7 @@ func (sm *sortedMap) Swap(i, j int) {
 	sm.s[i], sm.s[j] = sm.s[j], sm.s[i]
 }
 
-// Sorts a given map by value in desc and returns the key
+// Sorts a given map by value in desc and returns the array of key
 func SortedKeys(m map[string]float64) []string {
 	sm := new(sortedMap)
 	sm.m = m
