@@ -87,3 +87,20 @@ func SortedKeys(m map[string]float64) []string {
 	sort.Sort(sm)
 	return sm.s
 }
+
+//returns the year, month, day, week and  quarter for time.Now().Date()
+func (utils *Utils) GetTimeDimensionValues() (
+	year_number,
+	month_number,
+	month_day_number,
+	week_number,
+	quarter_number int,
+) {
+	year_number, month, month_day_number := time.Now().Date()
+	_, week_number = time.Now().ISOWeek()
+	month_number = int(month)
+	quarter_number = int(math.Ceil(float64(month_number)/3))
+
+	return year_number, month_number, month_day_number, week_number, quarter_number
+}
+
